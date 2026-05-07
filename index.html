@@ -1,7 +1,7 @@
 <!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>SoulSync - Curated Connections</title>
+    <title>온연 - MeetYourYeon</title>
     <!-- Google Fonts & Material Symbols -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -169,6 +169,40 @@
     <h1 class="font-display-kr text-primary-container mb-md tracking-tight mt-4 text-[100px]">온연</h1>
     <p class="font-body-lg text-body-lg tracking-wide text-on-surface-variant/50 italic max-w-2xl mx-auto mb-lg text-balance">당신과 비슷한 온도의 사람을 만나세요.</p>
     <a class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-lg py-sm rounded-full shadow-[0_10px_30px_-10px_rgba(92,107,192,0.4)] hover:scale-105 transition-transform inline-block" href="https://tally.so/r/MeJo5k" target="_blank">신청하기</a>
+    <div class="flex flex-col items-center gap-2">
+    <p id="live-status" class="text-sm font-medium text-on-surface-variant opacity-70 mt-4 font-['Plus_Jakarta_Sans'] tracking-tight">
+        현황 로딩 중...
+    </p>
+    </div>
+    <script>
+        async function updateLiveStatus() {
+            const url = '/api/status';
+            const statusElement = document.getElementById('live-status');
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+            
+                statusElement.innerHTML = `
+                <span class="inline-flex items-center gap-1">
+                    🙋‍♂️ 남성: <span class="text-primary font-bold">${data.male}</span>/50 
+                    <span class="mx-2 opacity-30">|</span> 
+                    🙋‍♀️ 여성: <span class="text-primary font-bold">${data.female}</span>/50
+                </span>
+                `;
+            
+            } catch (error) {
+                console.error('Error fetching Airtable:', error);
+                statusElement.innerText = '실시간 현황을 불러올 수 없습니다.';
+            }
+        }
+
+        // 초기 실행
+        updateLiveStatus();
+    
+        // 5분마다 자동 갱신 (선택 사항)
+        setInterval(updateLiveStatus, 300000);
+    </script>
     </section>
     <!-- Philosophy Section (Intro) -->
     <section class="py-[320px] px-gutter max-w-container-max mx-auto" id="philosophy">
