@@ -107,6 +107,12 @@
             .material-symbols-outlined {
                 font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             }
+             /* Korean word-break fix */
+            body {
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
+
             .liquid-glass {
                 background-color: rgba(255, 255, 255, 0.45);
                 backdrop-filter: blur(20px);
@@ -159,17 +165,17 @@
             }
         </style>
     </head>
-    <body class="bg-surface text-on-surface antialiased relative min-h-screen overflow-x-hidden selection:bg-secondary-container selection:text-primary-container" data-mode="connect">
+    <body class="bg-surface text-on-surface antialiased relative min-h-screen overflow-x-hidden selection:bg-secondary-container selection:text-primary-container"> 
     <!-- Mesh Gradient Background -->
     <div class="mesh-gradient-bg mesh-fluid"></div>
     <!-- Main Content -->
     <main class="relative z-10">
     <!-- Hero Section -->
-    <section class="px-gutter max-w-container-max mx-auto text-center flex flex-col items-center justify-center min-h-[90vh] pt-md mb-[320px]">
+    <section class="px-gutter max-w-container-max mx-auto text-center flex flex-col items-center justify-center min-h-[90vh] pt-md mb-[120px] md:mb-[320px]">
     <p class="font-body-md text-body-md tracking-wide uppercase text-secondary/70 italic -mb-1">미국 한인 직장인들을 위한 큐레이팅 매칭 서비스</p>
-    <h1 class="font-display-kr text-primary-container mb-md tracking-tight mt-4 text-[100px]">온연</h1>
+    <h1 class="font-display-kr text-primary-container mb-md tracking-tight mt-4 text-[56px] sm:text-[80px] md:text-[100px]">온연</h1>
     <p class="font-body-lg text-body-lg tracking-wide text-on-surface-variant/50 italic max-w-2xl mx-auto mb-lg text-balance">당신과 비슷한 온도의 사람을 만나세요.</p>
-    <a class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-lg py-sm rounded-full shadow-[0_10px_30px_-10px_rgba(92,107,192,0.4)] hover:scale-105 transition-transform inline-block" href="https://tally.so/r/MeJo5k" target="_blank">신청하기</a>
+    <a class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-8 py-3 whitespace-nowrap rounded-full shadow-[0_10px_30px_-10px_rgba(92,107,192,0.4)] hover:scale-105 transition-transform inline-block" href="https://tally.so/r/MeJo5k" target="_blank">신청하기</a>
     <div class="flex flex-col items-center gap-2">
     <p id="live-status" class="text-sm font-medium text-on-surface-variant opacity-70 mt-4 font-body-md tracking-tight">
         현황 로딩 중...
@@ -206,13 +212,13 @@
     </script>
     </section>
     <!-- Philosophy Section (Intro) -->
-    <section class="py-[320px] px-gutter max-w-container-max mx-auto" id="philosophy">
+    <section class="py-[80px] md:py-[320px] px-gutter max-w-container-max mx-auto" id="philosophy">
     <h2 class="font-headline-lg text-headline-lg text-primary-container text-center mb-2">소개</h2>
     <div class="h-[1px] bg-primary-container/20 mx-auto mb-lg w-40 mt-0"></div>
     <div class="rounded-xl p-lg md:p-xl text-center max-w-4xl mx-auto relative overflow-hidden bg-white/30 backdrop-blur-xl shadow-sm border border-white/50">
-    <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
-                        우연한 만남과는 거리가 먼 소개팅,<br>
-                        누구인지도 모를 사람들로 가득한 데이팅 앱 사이에서<br>
+    <p class="font-body-lg text-body-lg text-on-surface leading-relaxed text-balance">
+                        우연한 만남과는 거리가 먼 소개팅,
+                        누구인지도 모를 사람들로 가득한 데이팅 앱 사이에서
                         막막하셨던 분들을 위해<br>
     <span class="text-primary-container font-semibold">온연</span>은 상세한 신청서와 1대1 인터뷰를 통해 여러분의 '필연'을 찾아,<br>
                         직접 큐레이팅한 세 분을 '우연'처럼 연결해 드립니다.<br><br>
@@ -221,7 +227,7 @@
     </div>
     </section>
     <!-- Why Us (Bento Grid) -->
-    <section class="py-[320px] px-gutter max-w-container-max mx-auto" id="why-us">
+    <section class="py-[80px] md:py-[320px] px-gutter max-w-container-max mx-auto" id="why-us">
     <h2 class="font-headline-lg text-headline-lg text-primary-container text-center mb-2">왜</h2>
     <div class="h-[1px] bg-primary-container/20 mx-auto mb-lg w-40 mt-0"></div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
@@ -233,7 +239,7 @@
     <div class="liquid-glass rounded-xl p-md flex flex-col items-start">
     <span class="material-symbols-outlined text-primary-container text-3xl mb-sm">psychology</span>
     <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">맞춤 큐레이션</h3>
-    <p class="font-body-md text-body-md text-on-surface-variant whitespace-pre-line">연애 가치관을 다각도로 파악해
+    <p class="font-body-md text-body-md text-on-surface-variant">연애 가치관을 다각도로 파악해
                         당신과 결이 맞는 사람을 찾아드립니다.</p>
     </div>
     <div class="liquid-glass rounded-xl p-md flex flex-col items-start relative overflow-hidden">
@@ -244,12 +250,12 @@
     <div class="liquid-glass rounded-xl p-md flex flex-col items-start">
     <span class="material-symbols-outlined text-primary-container text-3xl mb-sm">workspace_premium</span>
     <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">검증된 시선</h3>
-    <p class="font-body-md text-body-md text-on-surface-variant">미국에서 5-10년간 다양한 분야에서&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; 성공적인 커리어를 쌓아온 혼성 팀이 직접 인터뷰합니다.</p>
+    <p class="font-body-md text-body-md text-on-surface-variant">미국에서 5-10년간 다양한 분야에서 성공적인 커리어를 쌓아온 혼성 팀이 직접 인터뷰합니다.</p>
     </div>
     </div>
     </section>
     <!-- The Journey (Horizontal Flow) -->
-    <section class="py-[320px] px-gutter max-w-container-max mx-auto" id="journey">
+    <section class="py-[80px] md:py-[320px] px-gutter max-w-container-max mx-auto" id="journey">
     <h2 class="font-headline-lg text-headline-lg text-primary-container text-center mb-2">어떻게</h2>
     <div class="h-[1px] bg-primary-container/20 mx-auto mb-lg w-40 mt-0"></div>
     <div class="relative w-full mx-auto mt-lg max-w-7xl">
@@ -295,7 +301,7 @@
     </div>
     </section>
     <!-- New And More Section -->
-    <section class="py-[320px] px-gutter max-w-container-max mx-auto" id="and-more">
+    <section class="py-[80px] md:py-[320px] px-gutter max-w-container-max mx-auto" id="and-more">
     <h2 class="font-headline-lg text-headline-lg text-primary-container text-center mb-2">그리고</h2>
     <div class="h-[1px] bg-primary-container/20 mx-auto w-40 mt-0"></div>
     <div class="flex flex-col items-center gap-2 mt-20 mb-20">
@@ -304,7 +310,7 @@
     <div class="w-1 h-1 rounded-full bg-primary-container/40"></div>
     </div>
     <div class="text-center max-w-4xl mx-auto">
-    <div class="inline-block px-16 py-12 rounded-[100%] border border-[#B3E5FC]/40 bg-transparent backdrop-blur-sm shadow-[0_0_25px_rgba(179,229,252,0.1)] transition-all duration-700 hover:shadow-[0_0_35px_rgba(179,229,252,0.2)]">
+    <div class="inline-block px-8 py-10 md:px-16 md:py-12 rounded-[60px] md:rounded-[100%] border border-[#B3E5FC]/40 bg-transparent backdrop-blur-sm shadow-[0_0_25px_rgba(179,229,252,0.1)] transition-all duration-700 hover:shadow-[0_0_35px_rgba(179,229,252,0.2)]">
     <p class="font-display-kr text-[20px] md:text-[24px] text-on-surface/70 leading-relaxed tracking-tight">
                             시즌의 모든 매칭이 마무리되면, LA에서 작은 애프터 파티를 엽니다.
                             <span class="text-body-lg text-on-surface-variant/80 mt-2 block">자세한 내용은 추후 안내드립니다.</span>
@@ -315,10 +321,10 @@
     </main>
     <!-- Floating Action Button (FAB) -->
     <div class="fixed bottom-lg left-1/2 -translate-x-1/2 z-50">
-    <a id="fab-link" class="fab-button bg-primary-container text-on-primary-container font-label-sm text-label-sm px-xl py-sm rounded-full shadow-[0_20px_40px_-10px_rgba(92,107,192,0.5)] hover:scale-105 active:scale-95 flex items-center justify-center" href="https://tally.so/r/MeJo5k" target="_blank">신청하기</a>
+    <a id="fab-link" class="fab-button bg-primary-container text-on-primary-container font-label-sm text-label-sm px-8 py-3 whitespace-nowrap min-w-[120px] rounded-full shadow-[0_20px_40px_-10px_rgba(92,107,192,0.5)] hover:scale-105 active:scale-95 flex items-center justify-center" href="https://tally.so/r/MeJo5k" target="_blank">신청하기</a>
     </div>
     <!-- Footer -->
-    <footer class="bg-white/20 backdrop-blur-md w-full mt-[320px] border-t border-white/30 py-6 relative z-10">
+    <footer class="bg-white/20 backdrop-blur-md w-full mt-[80px] md:mt-[320px] border-t border-white/30 py-6 relative z-10">
     <div class="max-w-container-max mx-auto px-gutter text-left">
     <div class="flex flex-col items-start font-body-md text-on-surface-variant">
     <div class="text-[12px] font-semibold mb-0.5">온연</div>
